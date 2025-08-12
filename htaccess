@@ -1,0 +1,26 @@
+ErrorDocument 403 /404.html
+ErrorDocument 404 /404.html
+
+DirectoryIndex page65776637.html
+
+RewriteEngine On
+
+RewriteCond %{REQUEST_FILENAME} /robots.txt
+RewriteCond "%{DOCUMENT_ROOT}/robots_%{HTTP_HOST}.txt" -f
+RewriteRule ^(.*)$ robots_%{HTTP_HOST}.txt [NC,L]
+RewriteRule ^manikyyri$ page65776877.html [NC]
+RewriteRule ^manikyyri/$ page65776877.html [NC]
+
+RewriteRule ^kestopigmentointi$ page65813039.html [NC]
+RewriteRule ^kestopigmentointi/$ page65813039.html [NC]
+
+RewriteRule ^ripsienpidennys$ page65815673.html [NC]
+RewriteRule ^ripsienpidennys/$ page65815673.html [NC]
+
+RewriteRule ^todistukset$ page66043643.html [NC]
+RewriteRule ^todistukset/$ page66043643.html [NC]
+
+RewriteRule ^tietoakestopigmentoinnista$ page66338335.html [NC]
+RewriteRule ^tietoakestopigmentoinnista/$ page66338335.html [NC]
+
+

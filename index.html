@@ -2290,22 +2290,24 @@
         <div class="bbglow-pic">
             <img src="images/BBglowlips2.png" width="250px">
         </div>
-        <div class="bbglow-text1">
-            <p>BB Lips Glow on kevyt, puolipysyvä hoito, joka antaa huulille luonnollisen sävyn, kosteutusta ja
-                kiiltoa ilman tarvetta päivittäiselle huulipunalle.
-                Menetelmässä käytetään erityistä seerumia, joka sisältää väripigmenttejä, vitamiineja ja
-                kosteuttavia aineita. Seerumi imeytetään huulten pintaan mikroneulauksen tai erityisen hoitolaitteen
-                avulla.</p>
-        </div>
-        <div class="bbglow-text2">
-            <p> <strong>🔸 BB Lips Glow -hoidon edut</strong></p><br><br>
-            <p> ✅ Antaa huulille luonnollisen värin ja kiillon<br>
-                ✅ Kosteuttaa ja ravitsee huulia pitkäkestoisesti<br>
-                ✅ Tekee huulista pehmeämmät ja sileämmät<br>
-                ✅ Korostaa huulten muotoa kevyesti<br>
-                ✅ Sopii kaikille ihotyypeille<br>
-                ✅ Ei vaadi toipumisaikaa
-            </p>
+        <div class="bbglow-texts-wrapper">
+            <div class="bbglow-text1">
+                <p>BB Lips Glow on kevyt, puolipysyvä hoito, joka antaa huulille luonnollisen sävyn, kosteutusta ja
+                    kiiltoa ilman tarvetta päivittäiselle huulipunalle.
+                    Menetelmässä käytetään erityistä seerumia, joka sisältää väripigmenttejä, vitamiineja ja
+                    kosteuttavia aineita. Seerumi imeytetään huulten pintaan mikroneulauksen tai erityisen hoitolaitteen
+                    avulla.</p>
+            </div>
+            <div class="bbglow-text2">
+                <p> <strong>🔸 BB Lips Glow -hoidon edut</strong></p><br><br>
+                <p> ✅ Antaa huulille luonnollisen värin ja kiillon<br>
+                    ✅ Kosteuttaa ja ravitsee huulia pitkäkestoisesti<br>
+                    ✅ Tekee huulista pehmeämmät ja sileämmät<br>
+                    ✅ Korostaa huulten muotoa kevyesti<br>
+                    ✅ Sopii kaikille ihotyypeille<br>
+                    ✅ Ei vaadi toipumisaikaa
+                </p>
+            </div>
         </div>
     </div>
     <style>
@@ -2315,17 +2317,14 @@
             justify-content: center;
             align-items: center;
             gap: 20px;
-            height: 700px;
+            min-height: 700px;
             position: relative;
             padding: 20px;
             flex-wrap: wrap;
-            /* allows wrapping on smaller screens */
+            overflow: visible;
         }
 
-        .bbglow-pic {
-            overflow: hidden;
-        }
-
+        /* --- IMAGE --- */
         .bbglow-pic img {
             position: absolute;
             left: 0;
@@ -2339,11 +2338,11 @@
         }
 
         @keyframes slideIn {
-            0% {
+            from {
                 transform: translateX(-100%);
             }
 
-            100% {
+            to {
                 transform: translateX(0);
             }
         }
@@ -2366,9 +2365,9 @@
             width: 100%;
         }
 
+        /* --- TEXT (DESKTOP) --- */
         .bbglow-text1 {
             position: absolute;
-            text-align: left;
             top: 50%;
             right: 50%;
             transform: translate(-70%, -95%);
@@ -2377,54 +2376,66 @@
             line-height: 1.5;
             font-size: 20px;
             font-family: Georgia, 'Times New Roman', serif;
+            text-align: left;
         }
 
         .bbglow-text2 {
             position: absolute;
-            text-align: left;
             top: 5%;
             left: 50%;
-            transform: translate(+70%, +15%);
+            transform: translate(70%, 15%);
             max-width: 400px;
             color: white;
             line-height: 1.5;
             font-size: 20px;
             font-family: Georgia, 'Times New Roman', serif;
+            text-align: left;
         }
 
-        /* 🌐 Responsive fixes for tablets and phones */
         @media (max-width: 1024px) {
             .grid-black {
                 flex-direction: column;
                 align-items: center;
+                justify-content: flex-start;
                 height: auto;
-                /* allow full height for text */
                 padding-bottom: 40px;
             }
 
             .video {
                 width: 90%;
-                max-width: 300px;
-                margin-bottom: 20px;
+                max-width: 320px;
+                margin: 20px auto;
             }
 
             .bbglow-pic img {
-                position: relative;
+                position: relative !important;
                 margin: 0 auto 20px auto;
-                left: 0;
-                bottom: 0;
-                transform: none;
+                left: auto;
+                bottom: auto;
+                transform: none !important;
+                max-width: 220px;
                 display: block;
+            }
+            .bbglow-texts-wrapper {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 90%;
+                margin: 0 auto;
             }
 
             .bbglow-text1,
             .bbglow-text2 {
-                position: relative;
-                transform: none;
+                position: relative !important;
+                top: auto !important;
+                left: auto !important;
+                right: auto !important;
+                transform: none !important;
                 text-align: center;
-                max-width: 90%;
-                margin: 15px auto;
-                font-size: 16px;
+                margin: 10px 0;
+                max-width: 100%;
+                font-size: clamp(15px, 2vw, 18px);
+                line-height: 1.6;
             }
         }
     </style>

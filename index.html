@@ -2311,12 +2311,14 @@
     <style>
         .grid-black {
             background-color: #171717;
-            justify-content: center;
             display: flex;
-            height: 700px;
+            justify-content: center;
             align-items: center;
             gap: 20px;
+            height: 700px;
             position: relative;
+            padding: 20px;
+            flex-wrap: wrap;
         }
 
         .bbglow-pic {
@@ -2325,12 +2327,14 @@
 
         .bbglow-pic img {
             position: absolute;
-            left: 0px;
+            left: 0;
             margin-left: 200px;
             border-radius: 5px;
             bottom: 50px;
             transform: translateX(-100px);
             animation: slideIn 1.0s ease forwards;
+            max-width: 250px;
+            width: 100%;
         }
 
         @keyframes slideIn {
@@ -2346,10 +2350,9 @@
         .video {
             width: 240px;
             display: inline-block;
-            position: absolute;
+            position: relative;
             padding: 4px;
             border-radius: 8px;
-            position: relative;
             overflow: hidden;
             background: linear-gradient(red, rgb(172, 36, 59));
             animation: glow 2s linear infinite;
@@ -2359,7 +2362,7 @@
         .video video {
             display: block;
             border-radius: 8px;
-            width: 240px;
+            width: 100%;
         }
 
         .bbglow-text1 {
@@ -2386,6 +2389,37 @@
             line-height: 1.5;
             font-size: 20px;
             font-family: Georgia, 'Times New Roman', serif;
+        }
+
+        @media (max-width: 768px) {
+            .grid-black {
+                flex-direction: column;
+                height: auto;
+            }
+
+            .video {
+                width: 90%;
+                max-width: 300px;
+            }
+
+            .bbglow-pic img {
+                position: relative;
+                margin: 20px auto 0 auto;
+                bottom: 0;
+                left: 0;
+                transform: translateX(0);
+                display: block;
+            }
+
+            .bbglow-text1,
+            .bbglow-text2 {
+                position: relative;
+                transform: none;
+                text-align: center;
+                max-width: 90%;
+                margin: 10px auto;
+                font-size: 16px;
+            }
         }
     </style>
     <div id="rec914710816" class="r t-rec t-rec_pt_0 t-rec_pt-res-480_0" style="padding-top:0px; "
@@ -2637,7 +2671,7 @@
             transition: all 0.3 ease;
             position: relative;
             overflow: hidden;
-            width:200px;
+            width: 200px;
         }
 
         .custom-btn::after {

@@ -2319,6 +2319,7 @@
             position: relative;
             padding: 20px;
             flex-wrap: wrap;
+            /* allows wrapping on smaller screens */
         }
 
         .bbglow-pic {
@@ -2332,7 +2333,7 @@
             border-radius: 5px;
             bottom: 50px;
             transform: translateX(-100px);
-            animation: slideIn 1.0s ease forwards;
+            animation: slideIn 1s ease forwards;
             max-width: 250px;
             width: 100%;
         }
@@ -2391,23 +2392,28 @@
             font-family: Georgia, 'Times New Roman', serif;
         }
 
-        @media (max-width: 768px) {
+        /* 🌐 Responsive fixes for tablets and phones */
+        @media (max-width: 1024px) {
             .grid-black {
                 flex-direction: column;
+                align-items: center;
                 height: auto;
+                /* allow full height for text */
+                padding-bottom: 40px;
             }
 
             .video {
                 width: 90%;
                 max-width: 300px;
+                margin-bottom: 20px;
             }
 
             .bbglow-pic img {
                 position: relative;
-                margin: 20px auto 0 auto;
-                bottom: 0;
+                margin: 0 auto 20px auto;
                 left: 0;
-                transform: translateX(0);
+                bottom: 0;
+                transform: none;
                 display: block;
             }
 
@@ -2417,7 +2423,7 @@
                 transform: none;
                 text-align: center;
                 max-width: 90%;
-                margin: 10px auto;
+                margin: 15px auto;
                 font-size: 16px;
             }
         }
